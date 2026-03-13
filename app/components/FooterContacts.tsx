@@ -30,7 +30,7 @@ export default function FooterContacts() {
       <span className="text-xs font-semibold tracking-widest uppercase text-gray-600">
         Контакты
       </span>
-      <div className="flex items-center gap-8">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-8">
         <a
           href="tel:+79950107316"
           className="contact-highlight flex items-center gap-1.5 text-sm text-gray-400 hover:text-white transition-colors"
