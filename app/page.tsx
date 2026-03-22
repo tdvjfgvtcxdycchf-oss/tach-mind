@@ -3,11 +3,14 @@ import FooterContacts from "./components/FooterContacts";
 import ProjectsCarousel from "./components/ProjectsCarousel";
 import HeroCarousel from "./components/HeroCarousel";
 import DashboardShowcase from "./components/DashboardShowcase";
-
+import ScrollAnimator from "./components/ScrollAnimator";
+import CountUp from "./components/CountUp";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#020515] text-white">
+      <ScrollAnimator />
+
       {/* Navbar */}
       <nav className="sticky top-0 z-50 bg-[#020515]/90 backdrop-blur-sm border-b border-white/5">
         <div className="max-w-5xl mx-auto flex items-center justify-between px-4 md:px-8 py-4 md:py-5">
@@ -32,23 +35,23 @@ export default function Home() {
       {/* Hero */}
       <section className="max-w-5xl mx-auto px-4 md:px-8 pt-8 md:pt-12 pb-14 md:pb-24 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
         <div className="flex flex-col gap-5 md:gap-6">
-          <span className="text-[#F53031] font-bold tracking-widest uppercase text-xs">
+          <span data-animate className="text-[#F53031] font-bold tracking-widest uppercase text-xs">
             Tech Mind
           </span>
-          <h1 className="text-3xl md:text-4xl font-bold leading-tight tracking-tight">
+          <h1 data-blur className="text-3xl md:text-4xl font-bold leading-tight tracking-tight">
             Перестаньте объяснять разработчикам что нужно бизнесу —{" "}
             <span className="text-[#F53031] underline decoration-[#F53031] underline-offset-4">
               мы уже знаем.
             </span>
           </h1>
-          <p className="text-gray-400 text-sm leading-relaxed">
+          <p data-animate className="text-gray-400 text-sm leading-relaxed" style={{ transitionDelay: "150ms" }}>
             Сайты, мобильные приложения и ИИ-автоматизация под ключ.
             Вы даёте задачу — мы строим работающий продукт. Без долгих брифингов
             и потерянных ТЗ.
           </p>
 
           {/* CTA */}
-          <div className="flex flex-col gap-3 mt-1">
+          <div data-animate className="flex flex-col gap-3 mt-1" style={{ transitionDelay: "250ms" }}>
             <div className="flex gap-3 md:gap-4">
               <a
                 href="#contact"
@@ -70,17 +73,19 @@ export default function Home() {
         </div>
 
         {/* Hero carousel */}
-        <HeroCarousel />
+        <div data-animate style={{ transitionDelay: "100ms" }}>
+          <HeroCarousel />
+        </div>
       </section>
 
       {/* Red divider */}
       <div className="max-w-5xl mx-auto px-4 md:px-8">
-        <div className="h-px bg-[#F53031]" />
+        <div data-line className="h-px bg-[#F53031]" />
       </div>
 
       {/* About */}
       <section id="about" className="max-w-5xl mx-auto px-4 md:px-8 pt-14 md:pt-32 pb-14 md:pb-20 relative overflow-hidden">
-        {/* О НАС watermark — только на десктопе */}
+        {/* О НАС watermark */}
         <span
           className="hidden md:flex absolute left-0 top-0 bottom-16 items-center text-[#0a1530] font-black select-none pointer-events-none"
           style={{
@@ -96,13 +101,13 @@ export default function Home() {
 
         <div className="md:ml-20 flex flex-col gap-8 md:gap-10">
           {/* Section counter */}
-          <div className="flex items-center gap-4">
+          <div data-animate className="flex items-center gap-4">
             <div className="flex-1 h-px bg-gray-800" />
             <span className="text-gray-600 text-xs font-mono">1 / 2</span>
           </div>
 
           {/* Description */}
-          <div className="flex flex-col gap-3 max-w-lg">
+          <div data-animate className="flex flex-col gap-3 max-w-lg">
             <h2 className="text-xl font-bold text-white">Кто мы такие?</h2>
             <p className="text-gray-300 text-base leading-relaxed">
               Команда инженеров из Новосибирска (Академгородок). Строим
@@ -112,13 +117,13 @@ export default function Home() {
           </div>
 
           {/* Principles */}
-          <h3 className="text-base font-semibold text-white">
+          <h3 data-animate className="text-base font-semibold text-white">
             Что вы получаете{" "}
             <span className="text-gray-500 font-normal">— конкретно</span>
           </h3>
 
           {/* Feature grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div data-stagger className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {[
               {
                 emoji: "🔒",
@@ -138,7 +143,7 @@ export default function Home() {
             ].map((card) => (
               <div
                 key={card.title}
-                className="flex flex-col gap-3 border border-white/10 rounded-lg p-5 bg-white/[0.03] hover:bg-white/[0.06] transition-colors"
+                className="flex flex-col gap-3 border border-white/10 rounded-lg p-5 bg-white/[0.03] hover:bg-white/[0.06] hover:-translate-y-1 transition-all duration-300"
               >
                 <span className="text-2xl">{card.emoji}</span>
                 <h4 className="text-sm font-semibold text-white leading-snug">{card.title}</h4>
@@ -149,30 +154,35 @@ export default function Home() {
 
           {/* Stats */}
           <div className="flex flex-col gap-4">
-            <h3 className="text-base font-semibold text-white">В цифрах</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <h3 data-animate className="text-base font-semibold text-white">В цифрах</h3>
+            <div data-stagger className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {[
                 {
-                  value: "3+",
+                  count: 3,
+                  suffix: "+",
                   label: "Лет в разработке",
                   sub: "Веб, мобайл и десктоп-решения для реального бизнеса",
                 },
                 {
-                  value: "6+",
+                  count: 6,
+                  suffix: "+",
                   label: "Проектов в production",
                   sub: "Маркетплейсы, медицина, ИИ-сервисы, автоматизация",
                 },
                 {
-                  value: "0",
+                  count: 0,
+                  suffix: "",
                   label: "Провальных запусков",
                   sub: "Каждый проект доведён до работающего продукта",
                 },
               ].map((stat) => (
                 <div
                   key={stat.label}
-                  className="flex flex-col gap-1.5 border border-white/10 rounded-lg p-5 bg-white/[0.03] hover:bg-white/[0.06] transition-colors"
+                  className="flex flex-col gap-1.5 border border-white/10 rounded-lg p-5 bg-white/[0.03] hover:bg-white/[0.06] hover:-translate-y-1 transition-all duration-300"
                 >
-                  <span className="text-3xl font-bold text-[#F53031]">{stat.value}</span>
+                  <span className="text-3xl font-bold text-[#F53031]">
+                    <CountUp to={stat.count} suffix={stat.suffix} />
+                  </span>
                   <p className="text-sm font-medium text-white">{stat.label}</p>
                   <p className="text-xs text-gray-500 leading-relaxed">{stat.sub}</p>
                 </div>
@@ -182,11 +192,11 @@ export default function Home() {
 
           {/* Tech Stack */}
           <div className="flex flex-col gap-5">
-            <h3 className="text-base font-semibold text-white">
+            <h3 data-animate className="text-base font-semibold text-white">
               Наш стек{" "}
               <span className="text-gray-500 font-normal">— Технологический фундамент</span>
             </h3>
-            <div className="flex flex-col gap-3">
+            <div data-stagger className="flex flex-col gap-3">
               {[
                 {
                   icon: "🖥️",
@@ -211,7 +221,7 @@ export default function Home() {
               ].map((row) => (
                 <div
                   key={row.category}
-                  className="flex items-start sm:items-center gap-3 md:gap-4 border border-white/10 rounded-lg px-4 md:px-5 py-3.5 bg-white/[0.02]"
+                  className="flex items-start sm:items-center gap-3 md:gap-4 border border-white/10 rounded-lg px-4 md:px-5 py-3.5 bg-white/[0.02] hover:bg-white/[0.05] transition-colors"
                 >
                   <span className="text-lg w-6 shrink-0 mt-0.5 sm:mt-0">{row.icon}</span>
                   <span className="text-xs text-gray-500 w-28 md:w-40 shrink-0">{row.category}</span>
@@ -229,18 +239,16 @@ export default function Home() {
               ))}
             </div>
           </div>
-
         </div>
       </section>
 
       {/* Red divider */}
       <div className="max-w-5xl mx-auto px-4 md:px-8">
-        <div className="h-px bg-[#F53031]" />
+        <div data-line className="h-px bg-[#F53031]" />
       </div>
 
       {/* Projects */}
       <section id="projects" className="max-w-5xl mx-auto px-4 md:px-8 py-14 md:py-20 relative overflow-hidden">
-        {/* ПРОЕКТЫ watermark — только на десктопе */}
         <span
           className="hidden md:flex absolute left-0 top-0 bottom-0 items-center text-[#0a1530] font-black select-none pointer-events-none"
           style={{
@@ -255,33 +263,31 @@ export default function Home() {
         </span>
 
         <div className="md:ml-20 flex flex-col gap-8 md:gap-10">
-          {/* Section counter */}
-          <div className="flex items-center gap-4">
+          <div data-animate className="flex items-center gap-4">
             <div className="flex-1 h-px bg-gray-800" />
             <span className="text-gray-600 text-xs font-mono">2 / 2</span>
           </div>
 
-          {/* Description */}
-          <div className="flex flex-col gap-3 max-w-lg">
+          <div data-animate className="flex flex-col gap-3 max-w-lg">
             <h2 className="text-xl font-bold text-white">Наши проекты</h2>
             <p className="text-gray-300 text-base leading-relaxed">
               Реальные продукты, которые мы создали и запустили в production.
             </p>
           </div>
 
-          {/* Project cards */}
-          <ProjectsCarousel />
+          <div data-animate style={{ transitionDelay: "100ms" }}>
+            <ProjectsCarousel />
+          </div>
         </div>
       </section>
 
       {/* Red divider */}
       <div className="max-w-5xl mx-auto px-4 md:px-8">
-        <div className="h-px bg-[#F53031]" />
+        <div data-line className="h-px bg-[#F53031]" />
       </div>
 
       {/* Dashboard showcase */}
       <section className="max-w-5xl mx-auto px-4 md:px-8 py-14 md:py-20 relative overflow-hidden">
-        {/* ДАШБОРД watermark — только на десктопе */}
         <span
           className="hidden md:flex absolute left-0 top-0 bottom-0 items-center text-[#0a1530] font-black select-none pointer-events-none"
           style={{
@@ -296,12 +302,13 @@ export default function Home() {
         </span>
 
         <div className="md:ml-20">
-          {/* Section counter */}
-          <div className="flex items-center gap-4 mb-8 md:mb-10">
+          <div data-animate className="flex items-center gap-4 mb-8 md:mb-10">
             <div className="flex-1 h-px bg-gray-800" />
             <span className="text-gray-600 text-xs font-mono">+ бонус</span>
           </div>
-          <DashboardShowcase />
+          <div data-animate>
+            <DashboardShowcase />
+          </div>
         </div>
       </section>
 
