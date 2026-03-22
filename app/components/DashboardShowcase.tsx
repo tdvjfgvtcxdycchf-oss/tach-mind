@@ -164,7 +164,7 @@ export default function DashboardShowcase() {
             </div>
 
             {/* KPI row */}
-            <div className="flex gap-2">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
               <KpiCard label="SSL" value="Активен" color="#34d399" dot="#34d399" />
               <KpiCard label="Домен" value="Активен" color="#34d399" dot="#34d399" />
               <KpiCard label="Баланс" value="∞ дней" color="#fbbf24" dot="#fbbf24" />
