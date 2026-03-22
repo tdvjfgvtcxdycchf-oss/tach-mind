@@ -24,9 +24,10 @@ export default function Home() {
             </a>
             <a
               href="#contact"
-              className="text-sm border border-[#F53031] text-white px-4 py-1.5 rounded hover:bg-[#F53031]/10 transition-colors"
+              className="btn-contact text-sm px-4 py-1.5 rounded flex items-center gap-2"
             >
-              Связаться
+              <span className="online-dot" />
+              <span>Связаться</span>
             </a>
           </div>
         </div>
