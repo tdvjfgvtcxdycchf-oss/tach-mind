@@ -14,7 +14,9 @@ export default function Home() {
       {/* Navbar */}
       <nav className="sticky top-0 z-50 bg-[#020515]/90 backdrop-blur-sm border-b border-white/5">
         <div className="max-w-5xl mx-auto flex items-center justify-between px-4 md:px-8 py-4 md:py-5">
-          <Image src="/logo.png" alt="Tech Mind" width={100} height={24} priority />
+          <a href="/" onClick={() => window.location.reload()}>
+            <Image src="/logo.png" alt="Tech Mind" width={100} height={24} priority />
+          </a>
           <div className="flex items-center gap-4 md:gap-8">
             <a href="#about" className="hidden sm:block text-sm text-gray-300 hover:text-white transition-colors">
               О Нас
@@ -111,8 +113,8 @@ export default function Home() {
           <div data-animate className="flex flex-col gap-3 max-w-lg">
             <h2 className="text-xl font-bold text-white">Кто мы такие?</h2>
             <p className="text-gray-300 text-base leading-relaxed">
-              Команда разработчиков из Новосибирска. Делаем сайты, приложения
-              и автоматизацию, которые уже помогают реальным бизнесам —
+              Команда разработчиков из Академгородка (Новосибирск). Делаем сайты,
+              приложения и автоматизацию, которые уже работают в реальных бизнесах —
               от маркетплейсов до медицинских центров.
             </p>
           </div>
@@ -133,7 +135,7 @@ export default function Home() {
               },
               {
                 emoji: "📱",
-                title: "Веб + мобайл + десктоп",
+                title: "Сайт, приложение и программа для компьютера",
                 text: "Один код — три платформы. Общая логика без дублирования, меньше расходов на поддержку.",
               },
               {
@@ -162,7 +164,7 @@ export default function Home() {
                   count: 3,
                   suffix: "+",
                   label: "Лет в разработке",
-                  sub: "Веб, мобайл и десктоп-решения для реального бизнеса",
+                  sub: "Сайты, мобильные приложения и программы для компьютера",
                 },
                 {
                   count: 6,
@@ -215,7 +217,7 @@ export default function Home() {
                 },
                 {
                   icon: "🖱️",
-                  category: "Десктоп-приложения",
+                  category: "Программы для компьютера",
                   techs: ["C# .NET", "C++"],
                 },
               ].map((row) => (
@@ -269,7 +271,7 @@ export default function Home() {
           </div>
 
           <div data-animate className="flex flex-col gap-3 max-w-lg">
-            <h2 className="text-xl font-bold text-white">Кому мы помогаем?</h2>
+            <h2 className="text-xl font-bold text-white">С кем мы работаем?</h2>
             <p className="text-gray-300 text-base leading-relaxed">
               Мы работаем с бизнесами, где есть повторяющиеся задачи — запись клиентов,
               общение, отчёты. Всё это можно автоматизировать и сэкономить время и деньги.
@@ -281,22 +283,22 @@ export default function Home() {
               {
                 emoji: "🚗",
                 title: "Автошколы",
-                text: "Запись учеников, расписание занятий, личный кабинет и напоминания — без звонков и бумажных журналов.",
+                text: "Ученики записываются и смотрят расписание сами — администратор не тратит время на звонки и бумажные журналы.",
               },
               {
                 emoji: "🏥",
                 title: "Медицинские центры",
-                text: "Онлайн-запись к врачу, прайс-лист, напоминания о визите и связь с пациентом — прямо в Telegram или на сайте.",
+                text: "Пациенты записываются сами и получают напоминания — меньше пропущенных визитов и лишних звонков в регистратуру.",
               },
               {
                 emoji: "📚",
                 title: "Образование и курсы",
-                text: "Платформа для онлайн-обучения, кабинет ученика, домашние задания и оплата — всё в одном месте.",
+                text: "Ученики оплачивают и получают материалы онлайн — не нужно собирать деньги вручную и рассылать задания в мессенджерах.",
               },
               {
                 emoji: "💪",
                 title: "Фитнес и спорт",
-                text: "Расписание тренировок, покупка абонементов и запись к тренеру — без лишних звонков.",
+                text: "Клиенты сами записываются и покупают абонементы — администратор не тратит время на звонки, оплата приходит автоматически.",
               },
               {
                 emoji: "✂️",
@@ -388,6 +390,77 @@ export default function Home() {
           </div>
           <div data-animate>
             <DashboardShowcase />
+          </div>
+        </div>
+      </section>
+
+      {/* Red divider */}
+      <div className="max-w-5xl mx-auto px-4 md:px-8">
+        <div data-line className="h-px bg-[#F53031]" />
+      </div>
+
+      {/* How we work */}
+      <section className="max-w-5xl mx-auto px-4 md:px-8 pt-14 md:pt-20 pb-14 md:pb-20 relative overflow-hidden">
+        <span
+          className="hidden md:flex absolute left-0 top-0 bottom-0 items-center text-[#0a1530] font-black select-none pointer-events-none"
+          style={{
+            writingMode: "vertical-rl",
+            transform: "rotate(180deg)",
+            fontSize: "5.5rem",
+            letterSpacing: "0.15em",
+            lineHeight: 1,
+          }}
+        >
+          ПРОЦЕСС
+        </span>
+
+        <div className="md:ml-20 flex flex-col gap-8 md:gap-10">
+          <div data-animate className="flex items-center gap-4">
+            <div className="flex-1 h-px bg-gray-800" />
+            <span className="text-gray-600 text-xs font-mono">как мы работаем</span>
+          </div>
+
+          <div data-animate className="flex flex-col gap-3 max-w-lg">
+            <h2 className="text-xl font-bold text-white">Что вас ждёт</h2>
+            <p className="text-gray-300 text-base leading-relaxed">
+              Никаких сюрпризов — вот как выглядит работа с нами от первого сообщения до готового продукта.
+            </p>
+          </div>
+
+          <div data-stagger className="flex flex-col gap-3">
+            {[
+              {
+                step: "01",
+                title: "Вы пишете нам",
+                text: "Расскажите задачу в свободной форме — никаких анкет и документов. Достаточно пары сообщений.",
+              },
+              {
+                step: "02",
+                title: "Обсуждаем и считаем",
+                text: "Уточняем детали, предлагаем решение, называем цену и срок. Обычно это занимает один разговор.",
+              },
+              {
+                step: "03",
+                title: "Делаем",
+                text: "Берёмся за работу и по ходу показываем промежуточные результаты. Вы всегда в курсе что происходит.",
+              },
+              {
+                step: "04",
+                title: "Сдаём готовый продукт",
+                text: "Передаём всё что сделали, объясняем как пользоваться. Дальше 3 месяца на связи — если что-то сломается, исправим бесплатно.",
+              },
+            ].map((item) => (
+              <div
+                key={item.step}
+                className="flex items-start gap-5 border border-white/10 rounded-lg px-5 py-4 bg-white/[0.02] hover:bg-white/[0.05] transition-colors"
+              >
+                <span className="text-2xl font-black text-[#F53031]/30 font-mono shrink-0 leading-none mt-0.5">{item.step}</span>
+                <div className="flex flex-col gap-1">
+                  <h4 className="text-sm font-semibold text-white">{item.title}</h4>
+                  <p className="text-xs text-gray-500 leading-relaxed">{item.text}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -519,8 +592,53 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Red divider */}
+      <div className="max-w-5xl mx-auto px-4 md:px-8">
+        <div data-line className="h-px bg-[#F53031]" />
+      </div>
+
+      {/* Contact CTA */}
+      <section id="contact" className="max-w-5xl mx-auto px-4 md:px-8 pt-14 md:pt-20 pb-16 md:pb-28">
+        <div className="flex flex-col items-center text-center gap-6 md:gap-8">
+          <div data-animate className="flex flex-col gap-3">
+            <span className="text-[#F53031] font-bold tracking-widest uppercase text-xs">Начнём?</span>
+            <h2 className="text-2xl md:text-3xl font-bold text-white leading-tight">
+              Расскажите задачу —{" "}
+              <span className="text-[#F53031]">ответим за 30 минут</span>
+            </h2>
+            <p className="text-gray-400 text-sm max-w-md mx-auto leading-relaxed">
+              Без лишних формальностей. Пишите как удобно — разберёмся и предложим решение.
+            </p>
+          </div>
+
+          <div data-animate className="flex flex-col sm:flex-row items-center gap-4" style={{ transitionDelay: "100ms" }}>
+            <a
+              href="https://t.me/leonidKhanov"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#F53031] hover:bg-[#d42829] text-white text-sm font-medium px-8 py-3 rounded transition-colors flex items-center gap-2"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+              </svg>
+              Написать в Telegram
+            </a>
+            <a
+              href="tel:+79950107316"
+              className="text-sm text-gray-400 hover:text-white transition-colors"
+            >
+              +7 995 010-73-16 — Леонид
+            </a>
+          </div>
+
+          <p data-animate className="text-xs text-gray-700" style={{ transitionDelay: "200ms" }}>
+            Берём 2–3 проекта в месяц · Академгородок, Новосибирск
+          </p>
+        </div>
+      </section>
+
       {/* Footer */}
-      <footer id="contact" className="border-t border-white/5 bg-[#020515]/90 mt-8">
+      <footer className="border-t border-white/5 bg-[#020515]/90 mt-8">
         <div className="max-w-5xl mx-auto px-4 md:px-8 py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <Image src="/logo.png" alt="Tech Mind" width={100} height={24} />
           <FooterContacts />

@@ -76,7 +76,7 @@ const projects: Project[] = [
     ],
   },
   {
-    category: "Десктоп-приложение",
+    category: "Программа для компьютера",
     title: "Helinstaller",
     emoji: "🪟",
     description:
