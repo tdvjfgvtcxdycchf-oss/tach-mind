@@ -33,6 +33,14 @@ type Project = {
 
 const projects: Project[] = [
   {
+    category: "Аналитика · SaaS",
+    title: "TechMind Dashboard",
+    emoji: "📊",
+    description:
+      "Персональный дашборд для каждого клиента: мониторинг SSL, домена, сервера, трафика и аномалий в реальном времени. ИИ-аналитика поведения пользователей и автоматические отчёты.",
+    links: [],
+  },
+  {
     category: "Маркетплейс",
     title: "Veinyard",
     emoji: "🎮",
@@ -128,7 +136,7 @@ export default function ProjectsCarousel() {
         <p className="text-gray-500 text-sm leading-relaxed px-8">{project.description}</p>
 
         <div className="flex items-center gap-4 px-8 mt-auto">
-          {project.links.map((link) => (
+          {project.links.length > 0 ? project.links.map((link) => (
             <a
               key={link.href}
               href={link.href}
@@ -141,7 +149,9 @@ export default function ProjectsCarousel() {
               {link.type === "github" && <GithubIcon />}
               {link.label}
             </a>
-          ))}
+          )) : (
+            <span className="text-xs text-gray-700 italic">Для клиентов TechMind</span>
+          )}
           <span className="ml-auto text-[11px] text-gray-700 font-mono">
             {active + 1} / {projects.length}
           </span>

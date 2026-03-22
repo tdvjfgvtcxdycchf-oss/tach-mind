@@ -2,6 +2,7 @@ import Image from "next/image";
 import FooterContacts from "./components/FooterContacts";
 import ProjectsCarousel from "./components/ProjectsCarousel";
 import HeroCarousel from "./components/HeroCarousel";
+import DashboardShowcase from "./components/DashboardShowcase";
 
 
 export default function Home() {
@@ -35,31 +36,36 @@ export default function Home() {
             Tech Mind
           </span>
           <h1 className="text-3xl md:text-4xl font-bold leading-tight tracking-tight">
-            Превращаем сложные технологии в{" "}
+            Перестаньте объяснять разработчикам что нужно бизнесу —{" "}
             <span className="text-[#F53031] underline decoration-[#F53031] underline-offset-4">
-              прибыль
-            </span>{" "}
-            вашего бизнеса.
+              мы уже знаем.
+            </span>
           </h1>
           <p className="text-gray-400 text-sm leading-relaxed">
-            Создаём пользовательские веб-сервисы, мобильные приложения и
-            системы автоматизации с использованием искусственного интеллекта.
+            Сайты, мобильные приложения и ИИ-автоматизация под ключ.
+            Вы даёте задачу — мы строим работающий продукт. Без долгих брифингов
+            и потерянных ТЗ.
           </p>
 
           {/* CTA */}
-          <div className="flex gap-3 md:gap-4 mt-1">
-            <a
-              href="#contact"
-              className="bg-[#F53031] hover:bg-[#d42829] text-white text-sm font-medium px-5 md:px-6 py-2.5 rounded transition-colors"
-            >
-              Связаться
-            </a>
-            <a
-              href="#about"
-              className="border border-gray-600 hover:border-gray-400 text-gray-300 hover:text-white text-sm font-medium px-5 md:px-6 py-2.5 rounded transition-colors"
-            >
-              Узнать больше
-            </a>
+          <div className="flex flex-col gap-3 mt-1">
+            <div className="flex gap-3 md:gap-4">
+              <a
+                href="#contact"
+                className="bg-[#F53031] hover:bg-[#d42829] text-white text-sm font-medium px-5 md:px-6 py-2.5 rounded transition-colors"
+              >
+                Получить консультацию
+              </a>
+              <a
+                href="#projects"
+                className="border border-gray-600 hover:border-gray-400 text-gray-300 hover:text-white text-sm font-medium px-5 md:px-6 py-2.5 rounded transition-colors"
+              >
+                Наши проекты
+              </a>
+            </div>
+            <p className="text-xs text-gray-600">
+              Бесплатно · Ответим за 30 минут · Берём 2–3 проекта в месяц
+            </p>
           </div>
         </div>
 
@@ -99,17 +105,16 @@ export default function Home() {
           <div className="flex flex-col gap-3 max-w-lg">
             <h2 className="text-xl font-bold text-white">Кто мы такие?</h2>
             <p className="text-gray-300 text-base leading-relaxed">
-              Мы — команда инженеров-разработчиков из Новосибирска. Нас
-              объединяет страсть к чистому коду и созданию продуктов, которые
-              решают реальные боли бизнеса, а не просто висят «красивой
-              картинкой».
+              Команда инженеров из Новосибирска (Академгородок). Строим
+              продукты, которые решают реальные задачи бизнеса и уже работают
+              в production — от маркетплейсов до медицинской автоматизации.
             </p>
           </div>
 
           {/* Principles */}
           <h3 className="text-base font-semibold text-white">
-            Наши принципы{" "}
-            <span className="text-gray-500 font-normal">— Ваши козыри</span>
+            Что вы получаете{" "}
+            <span className="text-gray-500 font-normal">— конкретно</span>
           </h3>
 
           {/* Feature grid */}
@@ -117,18 +122,18 @@ export default function Home() {
             {[
               {
                 emoji: "🔒",
-                title: "Безопасность на уровне архитектуры",
-                text: "Бизнес-логика скрыта на сервере и защищена от копирования или взлома через браузер.",
+                title: "Продукт, а не код-на-выброс",
+                text: "Архитектура под ваш рост: безопасность, масштабируемость и документация — в комплекте.",
               },
               {
                 emoji: "📱",
-                title: "Кроссплатформенность",
-                text: "Создаём решения, которые работают везде: от браузера до смартфона, сохраняя единую логику и скорость.",
+                title: "Веб + мобайл + десктоп",
+                text: "Один стек — три платформы. Единая бизнес-логика, нет дублирования, меньше расходов на поддержку.",
               },
               {
                 emoji: "💬",
-                title: "Прямой контакт",
-                text: "Вы работаете напрямую с разработчиками, а не с менеджерами. Мы всегда на связи и готовы оперативно внедрять правки.",
+                title: "Разработчик = ваш менеджер",
+                text: "Никаких менеджеров-посредников. Задачи — напрямую команде. Правки — за часы, не за недели.",
               },
             ].map((card) => (
               <div
@@ -144,23 +149,23 @@ export default function Home() {
 
           {/* Stats */}
           <div className="flex flex-col gap-4">
-            <h3 className="text-base font-semibold text-white">Факты в цифрах</h3>
+            <h3 className="text-base font-semibold text-white">В цифрах</h3>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {[
                 {
                   value: "3+",
-                  label: "Года опыта",
-                  sub: "Мобильной, Веб и Десктоп разработки",
+                  label: "Лет в разработке",
+                  sub: "Веб, мобайл и десктоп-решения для реального бизнеса",
                 },
                 {
-                  value: "∞",
-                  label: "Реальные внедрения",
-                  sub: "От систем анализа состава продуктов до автоматизации мед-центров",
+                  value: "6+",
+                  label: "Проектов в production",
+                  sub: "Маркетплейсы, медицина, ИИ-сервисы, автоматизация",
                 },
                 {
-                  value: "📍",
-                  label: "Новосибирск",
-                  sub: "Академгородок",
+                  value: "0",
+                  label: "Провальных запусков",
+                  sub: "Каждый проект доведён до работающего продукта",
                 },
               ].map((stat) => (
                 <div
@@ -266,6 +271,37 @@ export default function Home() {
 
           {/* Project cards */}
           <ProjectsCarousel />
+        </div>
+      </section>
+
+      {/* Red divider */}
+      <div className="max-w-5xl mx-auto px-4 md:px-8">
+        <div className="h-px bg-[#F53031]" />
+      </div>
+
+      {/* Dashboard showcase */}
+      <section className="max-w-5xl mx-auto px-4 md:px-8 py-14 md:py-20 relative overflow-hidden">
+        {/* ДАШБОРД watermark — только на десктопе */}
+        <span
+          className="hidden md:flex absolute left-0 top-0 bottom-0 items-center text-[#0a1530] font-black select-none pointer-events-none"
+          style={{
+            writingMode: "vertical-rl",
+            transform: "rotate(180deg)",
+            fontSize: "5.5rem",
+            letterSpacing: "0.15em",
+            lineHeight: 1,
+          }}
+        >
+          ДАШБОРД
+        </span>
+
+        <div className="md:ml-20">
+          {/* Section counter */}
+          <div className="flex items-center gap-4 mb-8 md:mb-10">
+            <div className="flex-1 h-px bg-gray-800" />
+            <span className="text-gray-600 text-xs font-mono">+ бонус</span>
+          </div>
+          <DashboardShowcase />
         </div>
       </section>
 
