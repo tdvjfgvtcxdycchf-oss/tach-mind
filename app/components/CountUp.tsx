@@ -8,7 +8,7 @@ interface Props {
   duration?: number;
 }
 
-export default function CountUp({ to, suffix = "", duration = 1200 }: Props) {
+export default function CountUp({ to, suffix = "", duration = 2200 }: Props) {
   const [value, setValue] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);
   const rafRef = useRef<number | null>(null);
