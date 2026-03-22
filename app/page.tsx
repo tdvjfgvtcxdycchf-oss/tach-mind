@@ -14,7 +14,7 @@ export default function Home() {
       {/* Navbar */}
       <nav className="sticky top-0 z-50 bg-[#020515]/90 backdrop-blur-sm border-b border-white/5">
         <div className="max-w-5xl mx-auto flex items-center justify-between px-4 md:px-8 py-4 md:py-5">
-          <a href="/" onClick={() => window.location.reload()}>
+          <a href="/">
             <Image src="/logo.png" alt="Tech Mind" width={100} height={24} priority />
           </a>
           <div className="flex items-center gap-4 md:gap-8">
