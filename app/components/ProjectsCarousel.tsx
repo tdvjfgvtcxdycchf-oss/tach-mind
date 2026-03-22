@@ -33,7 +33,7 @@ type Project = {
 
 const projects: Project[] = [
   {
-    category: "Аналитика · SaaS",
+    category: "Аналитика · Веб-сервис",
     title: "TechMind Dashboard",
     emoji: "📊",
     description:
