@@ -438,20 +438,20 @@ export default function Home() {
                   "Форма обратной связи",
                   "Настройка домена и хостинга",
                 ],
-                price: "по запросу",
+                price: "от 10 000 ₽",
                 highlight: false,
               },
               {
                 tag: "Бизнес",
                 emoji: "🤖",
-                title: "Сайт + Telegram-бот",
+                title: "Сайт + Чат-бот",
                 features: [
                   "Всё из пакета Старт",
                   "Бот для записи клиентов",
                   "Прайс-лист и уведомления",
                   "Связь с менеджером",
                 ],
-                price: "по запросу",
+                price: "от 20 000 ₽",
                 highlight: true,
               },
               {
@@ -464,7 +464,7 @@ export default function Home() {
                   "Серверная часть и база данных",
                   "Поддержка после запуска",
                 ],
-                price: "от ... ₽",
+                price: "от 60 000 ₽",
                 highlight: false,
               },
             ].map((pkg) => (
@@ -505,9 +505,17 @@ export default function Home() {
             ))}
           </div>
 
-          <p data-animate className="text-xs text-gray-600">
-            Цены указаны ориентировочно и зависят от сложности проекта. Точную стоимость назовём после короткого разговора.
-          </p>
+          <div data-animate className="flex flex-col gap-3">
+            <p className="text-sm text-gray-300 border-l-2 border-[#F53031] pl-4">
+              Вы платите один раз и владеете продуктом — без ежегодных платежей за то, что уже ваше.
+            </p>
+            <p className="text-sm text-gray-400 border-l-2 border-white/10 pl-4">
+              3 месяца гарантии после сдачи — баги исправляем бесплатно. Нововведения и доработки — стоимость зависит от объёма, обсуждаем индивидуально.
+            </p>
+            <p className="text-xs text-gray-600 pl-4">
+              Цены ориентировочные и зависят от сложности. Точную стоимость назовём после короткого разговора.
+            </p>
+          </div>
         </div>
       </section>
 
