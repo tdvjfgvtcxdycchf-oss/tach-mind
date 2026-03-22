@@ -13,7 +13,8 @@ export default function ScrollAnimator() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("in-view");
-            observer.unobserve(entry.target);
+          } else {
+            entry.target.classList.remove("in-view");
           }
         });
       },
