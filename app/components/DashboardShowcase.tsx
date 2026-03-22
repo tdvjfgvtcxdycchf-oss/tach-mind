@@ -126,9 +126,14 @@ export default function DashboardShowcase() {
             <span className="w-2.5 h-2.5 rounded-full bg-[#FEBC2E]" />
             <span className="w-2.5 h-2.5 rounded-full bg-[#28C840]" />
           </div>
-          <div className="flex-1 mx-3 bg-white/5 rounded text-[9px] text-gray-600 px-2.5 py-1 font-mono">
-            dashboard.techmind.app
-          </div>
+          <a
+            href="https://dashboard-tech-mind.ru/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 mx-3 bg-white/5 hover:bg-white/10 rounded text-[9px] text-gray-400 hover:text-white px-2.5 py-1 font-mono transition-colors cursor-pointer"
+          >
+            dashboard-tech-mind.ru
+          </a>
         </div>
 
         {/* App content */}
